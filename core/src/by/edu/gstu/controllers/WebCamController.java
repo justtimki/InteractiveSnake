@@ -10,15 +10,23 @@ import org.opencv.highgui.VideoCapture;
  */
 public class WebCamController {
 
-    private final static String IMG_NAME = "camera.jpg";
+    private static final String IMG_NAME = "camera.jpg";
     private Mat webcamImage;
     private VideoCapture webcam;
 
+    /**
+     * Construct WebCamController
+     * @param webcam used web camera
+     */
     public WebCamController(final VideoCapture webcam) {
         webcamImage = new Mat();
         this.webcam = webcam;
     }
 
+    /**
+     * Fetch picture from web camera and convert it to jpg image.
+     * @return texture which represent camera view.
+     */
     public Texture fetchTextureFromCam() {
         webcam.read(webcamImage);
 

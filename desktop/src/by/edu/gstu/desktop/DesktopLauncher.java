@@ -5,7 +5,10 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 import org.opencv.core.Core;
 
-public class DesktopLauncher {
+/**
+ * App start point class.
+ */
+public final class DesktopLauncher {
 
     /*
       Load openCV library.
@@ -14,7 +17,16 @@ public class DesktopLauncher {
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
     }
 
-	public static void main (String[] arg) {
+    /**
+     * Default constructor.
+     */
+    private DesktopLauncher() { }
+
+    /**
+     * App start point method.
+     * @param arg command line args.
+     */
+	public static void main(final String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		new LwjglApplication(new SnakeGame(), config);
 	}
